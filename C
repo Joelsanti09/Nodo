@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Nodo {
+    void* dato;
+    struct Nodo* siguiente;
+} Nodo;
+
+Nodo* crearNodo(void* dato) {
+    Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+    if (nuevoNodo) {
+        nuevoNodo->dato = dato;
+        nuevoNodo->siguiente = NULL;
+    }
+    return nuevoNodo;
+}
+
+void setDato(Nodo* nodo, void* dato) {
+    if (nodo) {
+        nodo->dato = dato;
+    }
+}
+
+void* getDato(Nodo* nodo) {
+    return nodo ? nodo->dato : NULL;
+}
+
+void setSiguiente(Nodo* nodo, Nodo* siguiente) {
+    if (nodo) {
+        nodo->siguiente = siguiente;
+    }
+}
+
+Nodo* getSiguiente(Nodo* nodo) {
+    return nodo ? nodo->siguiente : NULL;
+}
